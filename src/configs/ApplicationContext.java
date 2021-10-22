@@ -10,8 +10,8 @@ public class ApplicationContext {
     private static ApplicationContext instance;
 
     private User loggedInUser;
-	private Menu mainMenu;
-	private Cart sessionCart;
+    private Menu mainMenu;
+    private Cart sessionCart;
 
     private ApplicationContext() {}
 
@@ -22,29 +22,29 @@ public class ApplicationContext {
 		this.loggedInUser = user;
 	}
 	
-	public User getLoggedInUser() {
-		return this.loggedInUser;
-	}
-	
-	public void setMainMenu(Menu menu) {
-		this.mainMenu = menu;
-	}
-	
-	public Menu getMainMenu() {
-		return this.mainMenu;
-	}
+   public User getLoggedInUser() {
+	return this.loggedInUser;
+   }
 
-	public static ApplicationContext getInstance() {
-		if (instance == null) {
-			instance = new ApplicationContext();
-		}
-		return instance;
-	}
+   public void setMainMenu(Menu menu) {
+	this.mainMenu = menu;
+   }
 
-	public Cart getSessionCart() {
-		if (this.sessionCart == null) {
-			this.sessionCart = new DefaultCart();
-		}
-		return this.sessionCart;
+   public Menu getMainMenu() {
+	return this.mainMenu;
+   }
+
+   public static ApplicationContext getInstance() {
+	if (instance == null) {
+		instance = new ApplicationContext();
 	}
+	return instance;
+   }
+
+   public Cart getSessionCart() {
+	if (this.sessionCart == null) {
+		this.sessionCart = new DefaultCart();
+	}
+	return this.sessionCart;
+   }
 }
